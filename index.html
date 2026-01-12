@@ -59,6 +59,10 @@
         padding: 10px;
       }
     }
+
+    .schedule-table tr.break-row td   { background-color: #fff3cd80 !important; }
+    .schedule-table tr.poster-row td  { background-color: #e7f5ff80 !important; }
+    .schedule-table tr.gray-break td  { background-color: #f8f9fa !important; }
   </style>
   <!-- =======================================================
   * Template Name: TheEvent
@@ -121,7 +125,179 @@
     </section>
     <!-- End About Section -->
 
+        <!-- ======= Schedule Section ======= -->
+    <section id="schedule" style="padding-top: 20px;">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Schedule</h2>
+        </div>
 
+        <div class="table-responsive">
+          <table class="schedule-table table align-middle">
+            <thead>
+              <tr>
+                <th>Time&nbsp;(SGT)</th>
+                <th>Session</th>
+                <th>Speaker</th>
+                <th>Talk&nbsp;Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time">09:30 – 09:40</td>
+                <td>Introduction</td>
+                <td>Chen Zhao (NYU)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">09:40 – 10:20</td>
+                <td>Invited Talk 1</td>
+                <td>Aixin Sun (NTU)</td>
+                <td></td>
+              </tr>
+              
+              <tr class="poster-row">
+                <td class="time">10:20 – 11:20</td>
+                <td>Poster 1</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">11:20 – 12:00</td>
+                <td>Invited Talk 2</td>
+                <td>Rulin Shao (UW)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">12:00 – 12:40</td>
+                <td>Invited Talk 3</td>
+                <td>Min-Yen Kan (NUS)</td>
+                <td></td>
+              </tr>
+              <tr class="break-row">
+                <td class="time">12:40 – 13:20</td>
+                <td>Break</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">13:20 – 14:00</td>
+                <td>Invited Talk 4</td>
+                <td>Feng Wang (Jina AI)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">14:00 – 14:15</td>
+                <td>Contributed Talk 1</td>
+                <td>Xiangru Tang (Yale)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">14:15 – 14:30</td>
+                <td>Contributed Talk 2</td>
+                <td>Pankayaraj Pathmanathan (University of Maryland)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">14:30 – 14:50</td>
+                <td>Contributed Talk 3</td>
+                <td>Matan Orbach (IBM)</td>
+                <td></td>
+              </tr>
+
+              <tr class="poster-row">
+                <td class="time">14:50 – 15:50</td>
+                <td>Poster 2</td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td class="time">15:50 – 16:30</td>
+                <td>Invited Talk 5</td>
+                <td>Xiao Chenghao (Alibaba)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">16:30 – 16:45</td>
+                <td>Contributed Talk 4</td>
+                <td>Fengyu Cai (Technical University of Darmstadt)</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="time">16:45 – 17:00</td>
+                <td>Contributed Talk 5</td>
+                <td>Andre Rusli (Mercari)</td>
+                <td></td>
+              </tr>
+              <tr class="closing-row">
+                <td class="time">17:00 – 17:20</td>
+                <td>Closing</td>
+                <td>Siyue Zhang (NTU)</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- End Schedule Section -->
+
+    <section id="speakers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Speakers</h2>
+          <p>Invited speakers</p>
+        </div>
+
+        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-2 g-4">
+          <div class="col">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/speakers/aixin.jpg" alt="Aixin Sun" class="img-fluid w-100">
+              <br><a href="https://personal.ntu.edu.sg/axsun/" style="font-size: 1.2em; color: #00356B;">Aixin Sun</a></br>
+              <p>NTU</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/speakers/rulin.jpg" alt="Rulin Shao" class="img-fluid w-100">
+              <br><a href="https://rulinshao.github.io/" style="font-size: 1.2em; color: #00356B;">Rulin Shao</a></br>
+              <p>UW</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/speakers/min-yen.png" alt="Kan Min-Yen" class="img-fluid w-100">
+              <br><a href="https://www.comp.nus.edu.sg/~kanmy/" style="font-size: 1.2em; color: #00356B;">Kan Min-Yen</a></br>
+              <p>NUS</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/speakers/feng.jpg" alt="Feng Wang" class="img-fluid w-100">
+              <br><a href="https://www.linkedin.com/in/fwang1987/" style="font-size: 1.2em; color: #00356B;">Feng Wang</a></br>
+              <p>Jina AI</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/speakers/chenghao.jpg" alt="Chenghao Xiao" class="img-fluid w-100">
+              <br><a href="https://scholar.google.com/citations?user=1GtWLmIAAAAJ&hl=en" style="font-size: 1.2em; color: #00356B;">Chenghao Xiao</a></br>
+              <p>Durham University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+
+    
     <!-- ======= Topics Section ======= -->
     <section id="topic" class="section-with-bg">
       <br>
