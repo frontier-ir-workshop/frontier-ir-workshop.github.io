@@ -302,11 +302,6 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Accepted Papers</h2>
-          <p id="papers-placeholder">
-            The list of accepted papers will be announced after the notification of acceptance.
-            Accepted papers of the first edition are listed on the
-            <a href="2026/index.html#accepted-paper">AAAI 2026 workshop page</a>.
-          </p>
         </div>
         <div id="poster-presentations">
           <ul id="posterList"></ul>
@@ -321,15 +316,13 @@
           <h2>Call For Papers</h2>
         </div>
         <h3>Key Dates</h3>
-        <!-- For reference, the AAAI-27 recommended workshop timeline is: submissions to organizers
-             November 20, 2026; author notifications December 2, 2026 (both AoE). Replace the TBAs
-             below once the workshop's own dates are confirmed. -->
         <ul class="fa-ul">
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Submission Deadline</b>: TBA</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Notification of Acceptance</b>: TBA</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Workshop Date</b>: February 22 or 23, 2027 (exact day TBA), Montréal, Canada</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Submission Deadline</b>: November 20, 2026 (AoE)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Notification of Acceptance</b>: December 2, 2026 (AoE)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>AAAI-27 Early Registration Deadline</b>: December 15, 2026 (11:59 PM Eastern Time)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Workshop Date</b>: February 22 or 23, 2027 (AAAI-27 workshop program, exact day TBA), Montréal, Canada</li>
         </ul>
-        All deadlines follow the <a href="https://time.is/Anywhere_on_Earth">Anywhere on Earth (AoE)</a> timezone.
+        Submission and notification deadlines follow the <a href="https://time.is/Anywhere_on_Earth">Anywhere on Earth (AoE)</a> timezone.
         <br>
         <br>
         <h3>Submission Format</h3>
@@ -340,7 +333,7 @@
         </p>
         <h3>Submission Site</h3>
         <p>
-          As in the first edition, the workshop uses OpenReview for paper submission and review. The submission link will be announced on this page: <b>TBA</b>.
+          As in the first edition, the workshop uses OpenReview for paper submission and review. The submission link is <a href="https://openreview.net/group?id=AAAI.org/2027/Workshop/FrontierIR">https://openreview.net/group?id=AAAI.org/2027/Workshop/FrontierIR</a>.
           <br>Submissions will undergo double-blind review, with at least three reviews per paper. Accepted papers will be presented as talks or posters. The contributions are non-archival and will be hosted on the workshop website. A best paper award will be presented at the closing session.
         </p>
       </div>
@@ -375,6 +368,13 @@
               <img src="assets/img/organizers/xinran.jpg" alt="Xinran Zhao" class="img-fluid">
               <br><a href="https://colinzhaoust.github.io/" style="font-size: 1.2em; color: #00356B;">Xinran Zhao</a><br>
               <p>CMU</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/organizers/guilin.jpg" alt="Guilin Qi" class="img-fluid">
+              <br><a href="https://openreview.net/profile?id=~Guilin_Qi2" style="font-size: 1.2em; color: #00356B;">Guilin Qi</a><br>
+              <p>Southeast University</p>
             </div>
           </div>
         </div>
@@ -439,6 +439,20 @@
               <img src="assets/img/organizers/siyue.jpg" alt="Siyue Zhang" class="img-fluid">
               <br><a href="https://scholar.google.com/citations?user=RnAkjS8AAAAJ&hl=zh-CN&authuser=1" style="font-size: 1.2em; color: #00356B;">Siyue Zhang</a><br>
               <p>NTU</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/organizers/fengyucai.jpg" alt="Fengyu Cai" class="img-fluid">
+              <br><a href="https://trumancfy.github.io/personal-site/" style="font-size: 1.2em; color: #00356B;">Fengyu Cai</a><br>
+              <p>TU Darmstadt</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="assets/img/organizers/qingli.jpg" alt="Qing Li" class="img-fluid">
+              <br><a href="https://scholar.google.com/citations?user=uPgix8AAAAAJ&hl=en" style="font-size: 1.2em; color: #00356B;">Qing Li</a><br>
+              <p>University of Groningen</p>
             </div>
           </div>
         </div>
@@ -574,7 +588,6 @@
       fetchFirstOk(['accepted_papers.csv', 'accepted_paper.csv'])
         .then(function (csvText) {
           const rows = parseCsv(csvText);
-          let added = 0;
           rows.slice(1).forEach(function (cols) {
             const titleRaw = (cols && cols[1]) ? cols[1] : '';
             const authorsRaw = (cols && cols[3]) ? cols[3] : '';
@@ -587,12 +600,7 @@
             li.innerHTML = '<b>' + escapeHtml(title) + '</b><br>' + escapeHtml(authors);
             list.appendChild(li);
             list.appendChild(document.createElement('br'));
-            added++;
           });
-          if (added > 0) {
-            const placeholder = document.getElementById('papers-placeholder');
-            if (placeholder) placeholder.style.display = 'none';
-          }
         })
         .catch(function (err) {
           console.warn('No accepted papers CSV available yet:', err.message);
